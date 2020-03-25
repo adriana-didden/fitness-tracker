@@ -1,5 +1,5 @@
 const express = require("express");
-const router= require("express").Router();
+// const router= require("express").Router();
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -40,17 +40,44 @@ app.post("/submit", ({ body }, res) => {
   });
 app.get("/api/workouts", (req, res)=>{
     db.Workout.find()
-    .then(results => console.log(results))
+    .then(results => res.json(results))
 })
 
-router.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/exercise.html"));
+app.get("/exercise", (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/exercise.html"));
   });
 
-// app.get("/exercise", (req, res)=>{
-//     db.Workout.find()
-//     .populate("exercise")
-//   });
+app.post("/api/workouts", (req, res)=>{
+    db.Workout.create({})
+    .then(dbWorkout => {
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+})
+app.put("/api/workouts/:id",(req, res)=>{
+    db.Workout.findByIdAndUpdate(req.params.id, {$push:{exercises:req.body}},{new:true, runValidators:true})
+    .then(dbWorkout => {
+        console.log(dbWorkout)
+        res.json(dbWorkout);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+    })
+app.get("/stats", (req, res)=>{
+    res.sendFile(path.join(__dirname, "./public/stats.html"));
+});
+app.get("/api/workouts/range", (req, res)=>{
+    db.Workout.find({})
+    .then(dbworkout => {
+      res.json(dbworkout);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+})
 
 // Start the server
 
