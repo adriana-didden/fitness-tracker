@@ -1,5 +1,4 @@
 const express = require("express");
-// const router= require("express").Router();
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -28,7 +27,7 @@ db.Workout.create({ name: "" })
     console.log(message);
   });
 
-app.post("/submit", ({ body }, res) => {
+app.post("/", ({ body }, res) => {
     db.exercise.create(body)
       .then(({ _id }) => db.Workout.findOneAndUpdate({}, { $push: { exercise: _id } }, { new: true }))
       .then(dbWorkout => {
@@ -78,7 +77,6 @@ app.get("/api/workouts/range", (req, res)=>{
       console.log(err);
     });
 })
-
 // Start the server
 
 app.listen(PORT, () => {

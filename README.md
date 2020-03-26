@@ -1,33 +1,54 @@
-# fitness-tracker# Unit 17 Nosql Homework: Workout Tracker
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. 
-This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+  # Fitness-Tracker
 
-## User Story
+  ![user badge](https://img.shields.io/badge/license-MIT-red)
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+## Description 
+ 
+  Fitness tracker that allows you to build your workout. You can create new ones or build on your previous workout. It also tracks what you've done through the week and breaks it down in a chart
 
-## Business Context
+## Table of Contents 
+ 
+- [Installation](#Installation) 
 
-A consumer will reach their fitness goals quicker when they track their workout progress.
+- [Usage](#Usage) 
 
-## Acceptance Criteria
+- [License](#License) 
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+- [Contributing](#Contributing) 
 
-The user should be able to:
+- [Tests](#Tests) 
 
-  * Add exercises to a previous workout plan.
-
-  * Add new exercises to a new workout plan.
-
-  * View multiple the combined weight of multiple exercises on the `stats` page.
+- [Questions](#Questions) 
 
 
-## Submission on BCS
+## Installation  
 
-You are required to submit the following:
+```
+npm i
+```
 
-* The URL to the deployed application
+## Usage 
 
-* The URL to the Github repository
+nothing
+
+## License 
+
+This project is licensed under MIT license.
+
+## Contributing 
+
+undefined
+
+## Tests 
+
+```
+npm test
+```
+
+## Questions 
+
+<img src="https://avatars3.githubusercontent.com/u/46576203?v=4" width='100px' />
+
+If you have any questions, please contact adriana-didden directly at adrianadidden@gmail.com. 
+
