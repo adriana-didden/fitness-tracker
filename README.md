@@ -1,7 +1,9 @@
 
   # Fitness-Tracker
+  
+![screenshot](public/assets/images/fitness-tracker.png)
 
-  ![user badge](https://img.shields.io/badge/license-MIT-red)
+![user badge](https://img.shields.io/badge/license-MIT-red)
 
 ## Description 
  
